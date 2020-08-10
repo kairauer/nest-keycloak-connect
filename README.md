@@ -8,24 +8,20 @@
 
 > An adapter for [keycloak-nodejs-connect](https://github.com/keycloak/keycloak-nodejs-connect).
 
+This is a fork of John Joshua Ferrers [nest-keycloak-connect](https://github.com/ferrerojosh/nest-keycloak-connect) Nest module.
+The idea for the `KeycloakConnectService` is from Cenk Cetinkayas [nest-keycloak-connect](https://github.com/cenkce/nest-keycloak-connect) Nest module.
+
 ## Features
 
 - Protect your resources using [Keycloak's Authorization Services](https://www.keycloak.org/docs/latest/authorization_services/).
 - Simply add `@Resource`, `@Scopes`, or `@Roles` in your controllers and you're good to go.
-- Compatible with [Fastify](https://github.com/fastify/fastify) platform.
 
 ## Installation
-
-### Yarn
-
-```bash
-yarn add nest-keycloak-connect
-```
 
 ### NPM
 
 ```bash
-npm install nest-keycloak-connect --save
+npm install @kairauer/nest-keycloak-connect --save
 ```
 
 ## Getting Started
@@ -89,7 +85,14 @@ export class AppModule {}
 In your controllers, simply do:
 
 ```typescript
-import { Resource, Roles, Scopes, AllowAnyRole, Unprotected, Public } from 'nest-keycloak-connect';
+import {
+  Resource,
+  Roles,
+  Scopes,
+  AllowAnyRole,
+  Unprotected,
+  Public,
+} from 'nest-keycloak-connect';
 import { Controller, Get, Delete, Put, Post, Param } from '@nestjs/common';
 import { Product } from './product';
 import { ProductService } from './product.service';
