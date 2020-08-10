@@ -2,7 +2,7 @@
   "name": "@kairauer/nest-keycloak-connect",
   "version": "1.0.0",
   "description": "Authenticate users via Keycloak in your NestJS application",
-  "author": "Kai Rauer <info@kai-rauer.de>",
+  "author": "Kai Rauer <kai@kai-rauer.de>",
   "contributors": [
     "John Joshua Ferrer <johnjoshuaferrer@disroot.org>",
     "IERomanov <i.e.romanov1997@gmail.com>",
