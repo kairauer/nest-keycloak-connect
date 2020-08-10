@@ -22,7 +22,7 @@ export class AuthGuard implements CanActivate {
     private keycloak: KeycloakConnect.Keycloak,
     @Inject(KEYCLOAK_CONNECT_OPTIONS)
     private keycloakOpts: KeycloakConnectOptions,
-    private readonly reflector: Reflector
+    private readonly reflector: Reflector,
   ) {}
 
   async canActivate(context: ExecutionContext): Promise<boolean> {
@@ -37,11 +37,11 @@ export class AuthGuard implements CanActivate {
     }
 
     const request = context.switchToHttp().getRequest();
-    const jwt =
-      this.extractJwtFromCookie(request.cookies) ??
-      this.extractJwt(request.headers);
-
     try {
+      const jwt =
+        this.extractJwtFromCookie(request.cookies) ??
+        this.extractJwt(request.headers);
+
       const result = await this.keycloak.grantManager.validateAccessToken(jwt);
 
       if (typeof result === 'string') {
@@ -52,7 +52,7 @@ export class AuthGuard implements CanActivate {
         return true;
       }
     } catch (ex) {
-      console.error(`validateAccessToken Error: `, ex);
+      return false;
     }
 
     throw new UnauthorizedException();
@@ -74,6 +74,9 @@ export class AuthGuard implements CanActivate {
   }
 
   extractJwtFromCookie(cookies: { [key: string]: string }) {
-    return cookies && cookies[this.keycloakOpts.cookieKey] || cookies && cookies.KEYCLOAK_JWT;
+    return (
+      (cookies && cookies[this.keycloakOpts.cookieKey]) ||
+      (cookies && cookies.KEYCLOAK_JWT)
+    );
   }
 }

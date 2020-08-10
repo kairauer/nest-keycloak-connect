@@ -1,9 +1,10 @@
-import { DynamicModule, Module, Provider } from '@nestjs/common';
+import { DynamicModule, Module, Provider, HttpModule } from '@nestjs/common';
 import * as KeycloakConnect from 'keycloak-connect';
 import { KEYCLOAK_CONNECT_OPTIONS, KEYCLOAK_INSTANCE } from './constants';
 import { KeycloakConnectModuleAsyncOptions } from './interface/keycloak-connect-module-async-options.interface';
 import { KeycloakConnectOptionsFactory } from './interface/keycloak-connect-options-factory.interface';
 import { KeycloakConnectOptions } from './interface/keycloak-connect-options.interface';
+import { KeycloakConnectService } from './keycloak-connect.service';
 
 export * from './decorators/resource.decorator';
 export * from './decorators/scopes.decorator';
@@ -13,8 +14,13 @@ export * from './decorators/unprotected.decorator';
 export * from './guards/auth.guard';
 export * from './guards/resource.guard';
 export * from './guards/role.guard';
+export * from './keycloak-connect.service';
 
-@Module({})
+@Module({
+  imports: [HttpModule],
+  providers: [KeycloakConnectService],
+  exports: [KeycloakConnectService],
+})
 export class KeycloakConnectModule {
   public static register(opts: KeycloakConnectOptions): DynamicModule {
     const optsProvider = {

@@ -1,14 +1,17 @@
 {
-  "name": "nest-keycloak-connect",
-  "version": "1.2.1",
-  "description": "keycloak-nodejs-connect module for Nest",
-  "author": "John Joshua Ferrer <johnjoshuaferrer@disroot.org>",
+  "name": "@kairauer/nest-keycloak-connect",
+  "version": "1.0.0",
+  "description": "Authenticate users via Keycloak in your NestJS application",
+  "author": "Kai Rauer <info@kai-rauer.de>",
   "contributors": [
+    "John Joshua Ferrer <johnjoshuaferrer@disroot.org>",
     "IERomanov <i.e.romanov1997@gmail.com>",
     "Jeff Tian <jeff.tian@outlook.com>",
     "EFritzsche90"
   ],
   "license": "MIT",
+  "main": "dist/index.js",
+  "typings": "dist/index",
   "scripts": {
     "start:dev": "tsc -w",
     "prebuild": "rimraf dist",
@@ -20,22 +23,24 @@
     "lint": "tslint -p tsconfig.json -c tslint.json"
   },
   "keywords": [
+    "nest",
     "nestjs",
     "keycloak",
-    "typescript"
+    "typescript",
+    "authentication"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ferrerojosh/nest-keycloak-connect"
+    "url": "https://github.com/kairauer/nest-keycloak-connect"
   },
-  "bugs": "https://github.com/ferrerojosh/nest-keycloak-connect/issues",
+  "bugs": "https://github.com/kairauer/nest-keycloak-connect/issues",
   "peerDependencies": {
     "@nestjs/common": "^7.0.3",
     "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0"
   },
   "dependencies": {
-    "keycloak-connect": "^9.0.0"
+    "keycloak-connect": "^11.0.0"
   },
   "devDependencies": {
     "@nestjs/common": "^7.0.3",
