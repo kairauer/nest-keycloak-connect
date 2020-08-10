@@ -1,7 +1,7 @@
 # Nest Keycloak Connect
 
 ![License](https://badgen.net/npm/license/@kairauer/nest-keycloak-connect)
-[![Package Version](https://badgen.net/npm/v/nest-keycloak-connect)](https://www.npmjs.com/package/@kairauer/nest-keycloak-connect)
+[![Package Version](https://badgen.net/npm/v/@kairauer/nest-keycloak-connect)](https://www.npmjs.com/package/@kairauer/nest-keycloak-connect)
 ![Weekly Download](https://badgen.net/npm/dw/@kairauer/nest-keycloak-connect)
 ![Total Download](https://badgen.net/npm/dt/@kairauer/nest-keycloak-connect)
 
