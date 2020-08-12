@@ -1,6 +1,6 @@
-import { SetMetadata } from '@nestjs/common';
+import { SetMetadata } from "@nestjs/common";
 
-export const META_ROLES = 'roles';
+export const META_ROLES = "roles";
 
 /**
  * Keycloak user roles.

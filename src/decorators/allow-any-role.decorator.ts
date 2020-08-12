@@ -1,6 +1,6 @@
-import { SetMetadata } from '@nestjs/common';
+import { SetMetadata } from "@nestjs/common";
 
-export const META_ALLOW_ANY_ROLE = 'allowAnyRole';
+export const META_ALLOW_ANY_ROLE = "allowAnyRole";
 
 /**
  * Allow any role specified in the `@Roles` decorator.

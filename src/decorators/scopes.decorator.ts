@@ -1,6 +1,6 @@
-import { SetMetadata } from '@nestjs/common';
+import { SetMetadata } from "@nestjs/common";
 
-export const META_SCOPES = 'scopes';
+export const META_SCOPES = "scopes";
 
 /**
  * Keycloak Authorization Scopes.

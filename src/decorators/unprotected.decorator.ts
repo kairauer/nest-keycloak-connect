@@ -1,6 +1,6 @@
-import { SetMetadata } from '@nestjs/common';
+import { SetMetadata } from "@nestjs/common";
 
-export const META_UNPROTECTED = 'unprotected';
+export const META_UNPROTECTED = "unprotected";
 
 /**
  * Allow user to use unprotected routes.
