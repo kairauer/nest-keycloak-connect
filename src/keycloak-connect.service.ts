@@ -20,6 +20,7 @@ export class KeycloakConnectService {
             username: username,
             password: password
         };
+        // TODO: try/catch
         const res = await this.httpService
             .post(
                 `${this.options.authServerUrl}/realms/${this.options.realm}/protocol/openid-connect/token`,
@@ -31,9 +32,14 @@ export class KeycloakConnectService {
                 }
             )
             .toPromise();
+
+        // TODO: return promise
         if (typeof res === "object" && typeof res.data === "object" && res.data["access_token"]) {
             return res.data;
         }
         return false;
     }
+
+    // TODO: refresh token
+    //   public async refreshToken(refreshToken: string)
 }
